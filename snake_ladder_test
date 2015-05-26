@@ -68,7 +68,7 @@ public class snake_ladder_test {
 	@Test
 	public void text_positn1(){
 		snake_ladder.input = new Scanner ("\n");
-		snake_ladder.name1 = "Pritam";
+		snake_ladder.name1 = "Test1";
 		snake_ladder.positn1 = 97;
 		snake_ladder.dice1 = 3;
 		int new_pos11 = snake_ladder.positn1();
@@ -79,7 +79,7 @@ public class snake_ladder_test {
 	@Test
 	public void text_positn1_1(){
 		snake_ladder.input = new Scanner ("\n");
-		snake_ladder.name1 = "Pritam";
+		snake_ladder.name1 = "Test1";
 		snake_ladder.positn1 = 97;
 		snake_ladder.dice1 = 4;
 		int new_pos12 = snake_ladder.positn1();
@@ -89,7 +89,7 @@ public class snake_ladder_test {
 	@Test
 	public void text_positn2(){
 		snake_ladder.input = new Scanner ("\n");
-		snake_ladder.name2 = "G";
+		snake_ladder.name2 = "Test2";
 		snake_ladder.positn2 = 97;
 		snake_ladder.dice2 = 3;
 		int new_pos21 = snake_ladder.positn2();
@@ -100,7 +100,7 @@ public class snake_ladder_test {
 	@Test
 	public void text_positn2_1(){
 		snake_ladder.input = new Scanner ("\n");
-		snake_ladder.name2 = "G";
+		snake_ladder.name2 = "Test2";
 		snake_ladder.positn2 = 97;
 		snake_ladder.dice2 = 8;
 		int new_pos22 = snake_ladder.positn2();
@@ -146,7 +146,8 @@ public class snake_ladder_test {
 	
 	@Test
 	public void test_winner_1(){
-		snake_ladder.name1 = "Pritam";
+
+		snake_ladder.name1 = "Test1";
 		snake_ladder.positn2 = 99;
 		snake_ladder.positn1 = 100;
 		snake_ladder.winner();
@@ -155,8 +156,8 @@ public class snake_ladder_test {
 	
 	@Test
 	public void test_winner_2(){
-		snake_ladder.input = new Scanner ("\n");
-		snake_ladder.name2 = "G";
+		
+		snake_ladder.name2 = "Test2";
 		snake_ladder.positn1 = 99;
 		snake_ladder.positn2 = 100;
 		snake_ladder.winner();
