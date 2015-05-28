@@ -6,8 +6,7 @@ import org.junit.Test;
 
 public class Newsnakeladdertest {
 
-	Newsnakeladder snake_ladder = new Newsnakeladder();
-	
+ 
 	String nameT1,nameT2,rollT = "";
 	int positnT1 = 0;
 	int positnT2 = 0;
@@ -19,6 +18,8 @@ public class Newsnakeladdertest {
 	int snakesEnd1[] = {7,1,13,29,19,67,6};
 	
 	Scanner input = new Scanner (System.in);
+	
+	Newsnakeladder snake_ladder = new Newsnakeladder(ladders1 ,laddersEnd1 ,snakes1 ,snakesEnd1);
 	
 	@Test
 	public void test_get_player_1() {
