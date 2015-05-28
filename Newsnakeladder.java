@@ -3,51 +3,58 @@ package snake_ladder;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class Newsnakeladder {
 
-	public int dice1;
-	public int dice2;
-	public int positn1;
-	public int positn2;
-	public int ladders[]   = {4,8,15,21,28,51,66};
-	public int laddersEnd[] = {14,31,97,42,84,68,87};
-	public int snakes[]    = {17,24,55,62,71,88,99};
-	public int snakesEnd[] = {7,1,13,29,19,67,6};
-	public String name1;
-	public String name2;
-	public Scanner input = new Scanner (System.in);  
-	public String play_again = "";
-	  
-	public int player_cnt = 0;
-
-	public void slintialize ()
-	{
-		  player_cnt = 0;
-		  name1 = get_player();
-		  name2 = get_player();
-		  dice1 = get_random();
-		  dice2 = get_random();
-		  game_start();
-	}
+	int dice1,dice2,positn1,positn2,player_cnt;
+	int[] ladders;
+	int[] laddersEnd;
+	int[] snakes;
+	int[] snakesEnd;
+	String name1,name2,play_again;
+	Scanner input = new Scanner (System.in);
 	
+	public Newsnakeladder(int [] ladders ,int []laddersEnd ,int [] snakes ,int [] snakesEnd){
+		
+		this.ladders = ladders;
+		this.laddersEnd = laddersEnd;
+		this.snakes = snakes;
+		this.snakesEnd = snakesEnd;
+	}
+
+	public static void main(String args[]){
+		
+		int [] ladders   = new int[] {4,8,15,21,28,51,66};
+		int [] laddersEnd = new int[] {14,31,97,42,84,68,87};
+		int [] snakes = new int[] {17,24,55,62,71,88,99};
+		int [] snakesEnd = new int[] {7,1,13,29,19,67,6};
+		Newsnakeladder sladder = new Newsnakeladder(ladders ,laddersEnd ,snakes , snakesEnd);
+		sladder.game_start();
+		
+	}
+
 	  public void game_start()
 	  {
-	    while (positn1 < 100 && positn2 < 100)
-	    {
-	      get_random();
-	      positn1();
-	      player1Ladders();
-	      player1Snakes();
-	      positn2();
-	      player2Ladders();
-	      player2Snakes();
-	      winner();
-	     
-	    }
+		    System.out.println("*******SNAKES AND LADDERS**********");
+		    player_cnt = 0;
+		    name1 = get_player();
+		    name2 = get_player();
+		  
+		    while (positn1 < 100 && positn2 < 100)
+		    {
+		      dice1 = get_random();
+		      positn1();
+		      player1Ladders();
+		      player1Snakes();
+		      dice2 = get_random(); 
+		      positn2();
+		      player2Ladders();
+		      player2Snakes();
+		      winner();
+		    }
+		   
 	  }
 	  
-	  public  int get_random()
+	  public int get_random()
 	  {
 	    Random rand_num = new Random();
 	    return 1 + rand_num.nextInt(12);
@@ -63,8 +70,7 @@ public class Newsnakeladder {
 	  	  
 	  public  int positn1()
 	  {
-		  System.out.println(name1 + ": Press Enter to continue");
-	
+		  System.out.println(name1 + ": Press Enter to continue");	
 		  input.nextLine();		  
 		  
 	    System.out.println(name1 + ": rolled " + dice1);
@@ -80,8 +86,7 @@ public class Newsnakeladder {
 	  
 	  public  int positn2()
 	  {
-		  System.out.println(name2 + ": Press Enter to continue");
-		  
+		  System.out.println(name2 + ": Press Enter to continue");		  
 		  input.nextLine();
 		 
 	    System.out.println(name2 + ": rolled " + dice2);
@@ -98,10 +103,10 @@ public class Newsnakeladder {
 	  public  void winner()
 	  {
 	    if (positn1 == 100){
-	      System.out.println("THE WINNER IS " + name1 + ".");
+	      System.out.println("THE WINNER IS " + name1 + ". Game Over !!");
 	    }
 	    if (positn2 == 100){
-		      System.out.println("THE WINNER IS " + name2 + ".");
+		      System.out.println("THE WINNER IS " + name2 + ". Game Over !!");
 	    }
 	
 	  }
